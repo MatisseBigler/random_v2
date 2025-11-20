@@ -1,2 +1,91 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oblique Strategy</title>
+
+    <style>
+        body {
+            /* Définit Helvetica comme police par défaut */
+            font-family: 'Helvetica', Arial, sans-serif;
+            background-color: #ffffff; /* Fond blanc */
+            margin: 0; /* Supprime la marge par défaut */
+            padding-top: 50px; /* Ajoute un peu d'espace en haut */
+            text-align: center; /* Centre tout le texte */
+        }
+
+        /* Style pour le texte de la stratégie */
+        #strategy-text {
+            font-weight: 300; /* Police fine */
+            text-transform: uppercase; /* Tout en majuscules */
+            letter-spacing: 3px; /* Espace les lettres */
+            color: #333;
+            margin-bottom: 30px; /* Espace avant l'image */
+        }
+
+        /* Style pour l'image de nuage */
+        .cloud-image {
+            /* L'image prendra 90% de la largeur de la fenêtre */
+            width: 90%; 
+            
+            /* 'margin: 0 auto' la centre horizontalement */
+            margin: 0 auto 30px auto; /* 0 haut, auto G/D, 30px bas */
+            
+            display: block;
+        }
+
+        /* Style pour le texte "SEARCH..." */
+        .search-text {
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <h1 id="strategy-text"></h1>
+        
+        <img src="Capture d’écran 2025-11-20 à 20.31.57.jpg" alt="Nuages roses" class="cloud-image">
+        
+        <p class="search-text">SEARCH...</p>
+    </div>
+
+    <script>
+        // Ta liste de stratégies
+        const strategies = [
+            "Sort dehors",
+            "Utilise une vieille idée",
+            "Que ferait ton ami ?",
+            "Fais-le à l'envers",
+            "Demande à ton corps",
+            "Change d'instrument",
+            "La répétition est une forme de changement",
+            "N'aie pas peur de faire des clichés",
+            "Accentue les défauts",
+            "Honore ton erreur comme une intention cachée",
+            "Découpe",
+            "Travaille à une vitesse différente"
+        ];
+
+        // 1. Sélectionne l'élément H1
+        const strategyElement = document.getElementById('strategy-text');
+
+        // 2. Choisit un index (un numéro) au hasard
+        const randomIndex = Math.floor(Math.random() * strategies.length);
+
+        // 3. Récupère la phrase correspondante
+        const randomStrategy = strategies[randomIndex];
+
+        // 4. Affiche cette phrase dans le H1
+        strategyElement.textContent = randomStrategy;
+    </script>
+
+</body>
+</html>
