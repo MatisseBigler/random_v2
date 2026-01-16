@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oblique Strategy de Brian Eno</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        /* Styles par défaut (pour les grands écrans : desktop, tablette) */
+        body {
+            font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #ffffff; 
+            margin: 0; 
+            padding-top: 20px; 
+            text-align: center; 
+        }
+
+        /* Texte de la stratégie (Haut) */
+        #strategy-text {
+            font-weight: 300; 
+            text-transform: uppercase; 
+            letter-spacing: 0px; 
+            color: #333; 
+            margin-bottom: 20px; 
+            font-size: 32px; 
+        }
+
+        /* Image de nuage */
+        .cloud-image {
+            width: 90%; 
+            max-height: 60vh; 
+            height: auto; 
+            /* FIXE LA DISTORSION */
+            object-fit: contain; 
+            margin: 0 auto 20px auto; 
+            display: block;
+        }
+
+        /* Styles pour le champ de recherche (INPUT) */
+        .search-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-input {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0px;
+            font-size: 32px; 
+            color: #333; 
+            border: none;
+            outline: none; 
+            text-align: center;
+            width: 90%;
+            max-width: 700px; 
+        }
+
+        .search-input::placeholder {
+            color: #333;
+            opacity: 0.7; 
+        }
+
+        /* ================================
+          MEDIA QUERY : RENDU RESPONSIVE
+          ================================
+        */
+        @media (max-width: 600px) {
+            
+            body {
+                padding-top: 15px; 
+            }
+
+            #strategy-text {
+                font-size: 24px;
+                letter-spacing: 4px; 
+                margin-bottom: 15px; 
+            }
+
+            .search-input {
+                font-size: 24px;
+                letter-spacing: 4px;
+            }
+            
+             .cloud-image {
+                max-height: 50vh; 
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <h1 id="strategy-text"></h1>
+        
+        <img src="nuage copie.jpeg" alt="Nuages roses" class="cloud-image">
+        
+        <form action="https://www.google.com/search" method="GET" target="_blank" class="search-container">
+            <input type="text" name="q" placeholder="SEARCH..." class="search-input">
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Liste de stratégies
+            const strategies = [
+                "Sort dehors", "Utilise une vieille idée", "Que ferait ton ami ?", 
+                "Fais-le à l'envers", "Demande à ton corps", "Change d'instrument", 
+                "La répétition est une forme de changement", "N'aie pas peur de faire des clichés", 
+                "Accentue les défauts", "Honore ton erreur comme une intention cachée", 
+                "Découpe", "Travaille à une vitesse différente"
+            ];
+
+            // Remplissage de la phrase aléatoire
+            const strategyElement = document.getElementById('strategy-text');
+            const randomIndex = Math.floor(Math.random() * strategies.length);
+            strategyElement.textContent = strategies[randomIndex];
+        });
+    </script>
+
+</body>
+</html>
